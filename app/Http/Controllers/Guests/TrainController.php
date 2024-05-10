@@ -13,8 +13,8 @@ class TrainController extends Controller
      */
     public function index()
     {   
-        $trains = Train::where('data', '2024-05-10');
-        dd($trains);
+        $trains = Train::where('data', date('Y-m-d'))->get();
+
         return view('home.index', compact('trains'));
     }
 
