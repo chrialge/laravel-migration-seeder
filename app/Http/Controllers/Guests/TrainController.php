@@ -12,8 +12,9 @@ class TrainController extends Controller
      * Display a listing of the resource.
      */
     public function index()
-    {
-        $trains = Train::all();
+    {   
+        $trains = Train::where('data', '2024-05-10');
+        dd($trains);
         return view('home.index', compact('trains'));
     }
 
