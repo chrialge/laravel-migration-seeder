@@ -19,3 +19,5 @@ Ogni treno dovrà avere almeno:
 ## instruction 2
 
 usando la stessa repo Aggiungiamo un seeder per la classe Train usando un array di dati fittizzi fatta a mano.
+
+BONUS: Implementare il seeder tramite FakerPHP

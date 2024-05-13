@@ -31,6 +31,7 @@
                                     <th scope="col">data</th>
                                     <th scope="col">Orario di partenza</th>
                                     <th scope="col">Orario di Arrivo</th>
+                                    <th scope="col">Prezzo</th>
                                     <th scope="col">Codice del treno</th>
                                     <th scope="col">Numero binario</th>
                                     <th scope="col">In Orario</th>
@@ -42,8 +43,9 @@
                                     <td> {{ $train->starting_station }} </td>
                                     <td> {{ $train->arrival_station }} </td>
                                     <td> {{ $train->data }} </td>
-                                    <td> {{ $train->starting_time }} </td>
-                                    <td> {{ $train->arrival_time }} </td>
+                                    <td> {{ substr($train->starting_time, 0, -3) }} </td>
+                                    <td> {{ substr($train->arrival_time, 0, -3) }} </td>
+                                    <td> {{ $train->price }} &euro; </td>
                                     <td> {{ $train->code_train }} </td>
                                     <td> {{ $train->number_binary }}</td>
                                     @if ($train->in_time === 1)
