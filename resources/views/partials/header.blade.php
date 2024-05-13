@@ -10,11 +10,12 @@
             <div class="collapse navbar-collapse" id="collapsibleNavId">
                 <ul class="navbar-nav me-auto mt-2 mt-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" href="#" aria-current="page">Home
+                        <a class="nav-link {{ Route::currentRouteName() === 'home.index' ? 'active' : '' }}"
+                            href="{{ route('home.index') }}" aria-current="page">Home
                             <span class="visually-hidden">(current)</span></a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
+                    <li class="nav-item {{ Route::currentRouteName() === 'home.show' ? 'active' : '' }}">
+                        <a class="nav-link" href="#">My</a>
                     </li>
 
                 </ul>

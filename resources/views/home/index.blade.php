@@ -22,42 +22,45 @@
             @forelse ($trains as $train)
                 <div class="col">
                     <div class="table-responsive">
-                        <table class="table table-primary">
-                            <thead>
-                                <tr>
-                                    <th scope="col">Agency</th>
-                                    <th scope="col">Partenza da</th>
-                                    <th scope="col">Arrivo a</th>
-                                    <th scope="col">data</th>
-                                    <th scope="col">Orario di partenza</th>
-                                    <th scope="col">Orario di Arrivo</th>
-                                    <th scope="col">Prezzo</th>
-                                    <th scope="col">Codice del treno</th>
-                                    <th scope="col">Numero binario</th>
-                                    <th scope="col">In Orario</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr class="">
-                                    <td scope="row">{{ $train->agency }}</td>
-                                    <td> {{ $train->starting_station }} </td>
-                                    <td> {{ $train->arrival_station }} </td>
-                                    <td> {{ $train->data }} </td>
-                                    <td> {{ substr($train->starting_time, 0, -3) }} </td>
-                                    <td> {{ substr($train->arrival_time, 0, -3) }} </td>
-                                    <td> {{ $train->price }} &euro; </td>
-                                    <td> {{ $train->code_train }} </td>
-                                    <td> {{ $train->number_binary }}</td>
-                                    @if ($train->in_time === 1)
-                                        <td> E in orario</td>
-                                    @else
-                                        <td> E in ritardo</td>
-                                    @endif
+                        <a href="{{ route('home.show', $train) }}" class=" text-decoration-none">
+
+                            <table class="table table-primary">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Agency</th>
+                                        <th scope="col">Partenza da</th>
+                                        <th scope="col">Arrivo a</th>
+                                        <th scope="col">data</th>
+                                        <th scope="col">Orario di partenza</th>
+                                        <th scope="col">Orario di Arrivo</th>
+                                        <th scope="col">Prezzo</th>
+                                        <th scope="col">Codice del treno</th>
+                                        <th scope="col">Numero binario</th>
+                                        <th scope="col">In Orario</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="">
+                                        <td scope="row">{{ $train->agency }}</td>
+                                        <td> {{ $train->starting_station }} </td>
+                                        <td> {{ $train->arrival_station }} </td>
+                                        <td> {{ str_replace('-', '/', $train->data) }} </td>
+                                        <td> {{ substr($train->starting_time, 0, -3) }} </td>
+                                        <td> {{ substr($train->arrival_time, 0, -3) }} </td>
+                                        <td> {{ $train->price }} &euro; </td>
+                                        <td> {{ $train->code_train }} </td>
+                                        <td> {{ $train->number_binary }}</td>
+                                        @if ($train->in_time === 1)
+                                            <td> E in orario</td>
+                                        @else
+                                            <td> E in ritardo</td>
+                                        @endif
 
 
-                                </tr>
-                            </tbody>
-                        </table>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </a>
                     </div>
 
 
